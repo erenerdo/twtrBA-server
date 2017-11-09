@@ -22,5 +22,5 @@ app.use(router);
 
 
 app.listen(3000, () => {
-  console.log('listening');
+  console.log('twtrBA Server dunking on local host 3000');
 });

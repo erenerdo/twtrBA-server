@@ -13,6 +13,7 @@
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
     "nodemon": "^1.12.1",
+    "twit": "^2.2.9",
     "volleyball": "^1.4.1"
   }
 }
