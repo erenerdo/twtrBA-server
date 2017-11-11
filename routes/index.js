@@ -14,7 +14,6 @@ var T = new Twit({
 router.get('/:searchParams/:filter', function (req, res, next) {
   const search = req.params.searchParams.split('_').join(' ');
   const filter = String(req.params.filter);
-  console.log(search, filter);
   T.get('search/tweets', { q: `${search}`, count: 50, lang: 'en', result_type: filter}, function(err, data, response) {
     if (err) res.statusCode(500);
     res.json(data);
