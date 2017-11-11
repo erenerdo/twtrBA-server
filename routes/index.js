@@ -11,10 +11,11 @@ var T = new Twit({
 });
 
 
-router.get('/:searchParams', function (req, res, next) {
+router.get('/:searchParams/:filter', function (req, res, next) {
   const search = req.params.searchParams.split('_').join(' ');
-
-  T.get('search/tweets', { q: `${search} since:2011-07-11`, count: 50, lang: 'en'}, function(err, data, response) {
+  const filter = String(req.params.filter);
+  console.log(search, filter);
+  T.get('search/tweets', { q: `${search}`, count: 50, lang: 'en', result_type: filter}, function(err, data, response) {
     if (err) res.statusCode(500);
     res.json(data);
   });
